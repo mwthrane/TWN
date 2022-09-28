@@ -48,8 +48,5 @@ ls /sbin
 
 # swicth usr in cli
 su - _userName_
-
-#
-
 ```
 Everyting in linux is a file!
