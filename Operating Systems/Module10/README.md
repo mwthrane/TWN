@@ -11,3 +11,6 @@
 
 ### linux other permission
 ![linux other permission](https://raw.githubusercontent.com/mwthrane/TWN/main/Operating%20Systems/Module10/linux%20permissions%204%20other.png )
+
+### Numeric mode
+![Numeric mode](https://raw.githubusercontent.com/mwthrane/TWN/main/Operating%20Systems/Module10/linux%20permissions%204%20other.png )
