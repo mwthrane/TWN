@@ -8,8 +8,10 @@ Do not run services with root user permission.
 cat /etc/passwd
 USERNAME:PASSWORD:UID:GID:GECOS:HOMEDIR:SHELL
 eg.
-usr:x:1000:1000:,,,:/home/thrane:/bin/bash
+peter:x:1000:1000:,,,:/home/thrane:/bin/bash
 
+
+sudo usermod -aG newgroup
 
 
 ```bash
