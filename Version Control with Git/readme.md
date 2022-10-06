@@ -23,3 +23,14 @@ To rebase a pull do
 
 This is effective to avoid unnessesary commits.
 
+### Resolving merge conflicts
+
+When conflicts have been manually merged, continue with
+
+``` git rebase --continue ```
+
+### Git ignore
+
+
+
+
