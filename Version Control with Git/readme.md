@@ -31,6 +31,17 @@ When conflicts have been manually merged, continue with
 
 ### Git ignore
 
+Git ignore file is .gitignore
+
+To remove files already in repo before being ignore ``` git rm -r --cached _folder_ ```
+
+then commit and push
+
+### git stash 
+
+For changes that you don't want comitted yet.
+
+
 
 
 
