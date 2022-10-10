@@ -41,6 +41,33 @@ then commit and push
 
 For changes that you don't want comitted yet.
 
+### Going back in history
+
+git checkout _commit HASH_. 
+
+### Undoing commits
+
+git reset --hard HEAD~2 to go back 2 commits.
+
+To keep commits locally use soft instead of hard.
+
+#### UNdo commit in remote repo
+
+git reset --hard HEAD~2
+
+git push --force
+
+NEver do this in main/dev branch
+
+#### To revert in main branche
+git revert _commit hash_
+
+really creates a new commit that does the opposit.
+
+### Git merge
+
+
+
 
 
 
