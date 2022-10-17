@@ -113,3 +113,26 @@ curl -u usr:pwd -X GET 'http://167.172.102.226:8081/service/rest/v1/components/b
 
 ```
 
+## Build and publish npm tarball to Nexus
+
+base64 encode the PW
+```
+echo -n 'passwprd' | openssl base64
+```
+
+Set password in home/.npmrc
+```
+_auth=dGhyYW5lOlRScE5KRFlIaGNiUmZSTU0=
+```
+
+Now build and publish to Nexus
+```
+npm install
+npm pack
+npm publish --registry={npm-repo-url-in-nexus} {package-name}
+
+```
+
+
+
+
