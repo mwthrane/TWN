@@ -35,6 +35,20 @@ Give user sudo permission
 
 ``` usermod -aG sudo username ```
 
- 
+## package Javascript app (nodeJS)
+
+``` npm pack ```
+
+# unpack the node-project file
+tar zxvf bootcamp-node-project-1.0.0.tgz
+
+# change into unpacked directory called "package"
+cd package
+
+# install dependencies
+npm install
+
+# run the application
+node server.js
 
 
