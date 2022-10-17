@@ -1,6 +1,6 @@
-### Setting up gradle to push to Nexus
+## Setting up gradle to push to Nexus
 
-In build.gradle
+### In build.gradle
 
 ```java
 apply plugin: 'maven-publish'
@@ -42,3 +42,74 @@ repoUser = usr
 repoPassword = pw
 
 ```
+
+## Build and Publish Maven
+
+In pom.xml 
+
+```xml
+<build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>ord.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+    
+```
+
+also in pom.xml
+
+```xml
+<distributionManagement>
+    <snapshotRepository>
+        <id>nexus-snapshots</id>
+        <url>http://167.172.102.226:8081/repository/maven-snapshots/</url>
+    </snapshotRepository>
+</distributionManagement>
+
+
+```
+
+For user credentials. Create settings.xml in home directory
+
+```xml
+
+<settings>
+ <servers>
+  <server>
+   <id>nexus-snapshots></id>
+   <username>thrane</username>  
+   <password>xxx<password>
+  </server>
+ </servers>
+</settings>
+
+```
+
+To list repositories
+
+```
+curl -u usr:pwd X GET 'http://167.172.102.226:8081/service/rest/v1components?repository=maven-snapshots'
+
+```
+
+list a component
+
+```
+
+curl -u usr:pwd -X GET 'http://167.172.102.226:8081/service/rest/v1/components/bWF2ZW4tc25hcHNob3RzOjdkYzUyZmM2NjdkMWM4YjBlYzI0MWYwMmFmYTgxNWU0'
+
+```
+
