@@ -133,6 +133,54 @@ npm publish --registry={npm-repo-url-in-nexus} {package-name}
 
 ```
 
+## Download the latest NodeJS app artifact and run it
+
+Get download URL
+```
+curl -u {user}:{password} -X GET 'http://167.172.102.226:8081/service/rest/v1/components?repository={node-repo}&sort=version'
+```
+
+Download the tarball
+```
+curl --user username:password -o bootcamp-node-project-1.0.0.tgz http://167.172.102.226:8081/repository/npm-repo/bootcamp-node-project/-/bootcamp-node-project-1.0.0.tgz
+
+tar zxvf bootcamp-node-project-1.0.0.tgz
+
+npm install
+
+node server.js
+```
+
+### autodownload npm tarball and execute on server
+
+```
+
+#!/bin/bash
+
+#grab URL from Nexus repo
+
+filename=nodeJS-app'+'$(date)
+
+curl -u usr:pwd -X GET 'http://167.172.102.226:8081/service/rest/v1/components?repository=npm-repo&sort=version' | jq "." > artifact.json
+
+artifactDownloadUrl=$(jq '.items[].assets[].downloadUrl' artifact.json --raw-output)
+
+# fetch the artifact with the extracted download url using get' tool
+wget --http-user=usr --http-password=pwd $artifactDownloadUrl --output_file=$filename
+
+echo $filename
+
+tar zxvf "$filename"
+cd package
+npm install
+
+node server.js &
+
+```
+nexus@Nexus:~/package# app listening on port 3000!
+
+
+
 
 
 
