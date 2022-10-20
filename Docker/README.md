@@ -43,4 +43,24 @@ docker run builds a container from an image
 
 docker start, start, a container
 
+## Developing with Docker
+
+Create a docker network
+```
+sudo docker network create monto_network
+```
+
+Run a container example
+```
+sudo docker run -d \
+-p 27017:27017 \
+-e variable \
+-e variable \
+--name container_name \
+--net network_name
+mongo
+
+```
+
+
 
