@@ -1,13 +1,13 @@
 ## Docker commands
 
-```
+```bash
 # start docker service ubuntu
 sudo dockerd
 
 # download an image
 sudo docker pull image
 
-# start new container 
+# start new container
 sudo docker run image
 
 # Run container in the backgroup
@@ -23,12 +23,12 @@ sudo docker ps -a
 # First port is the host, second is the container
 
 sudo docker run -p6000:6378 redis
- 
+
 ```
 
 ### Docker debug commands
 
-```
+```bash
 # Get logs
 sudo docker logs
 
@@ -46,12 +46,12 @@ docker start, start, a container
 ## Developing with Docker
 
 Create a docker network
-```
+```bash
 sudo docker network create monto_network
 ```
 
 Run a container example
-```
+```bash
 sudo docker run -d \
 -p 27017:27017 \
 -e variable \
@@ -90,6 +90,22 @@ services:
 
 ```
 
+### Dockerfile
+Dockerfile is used to build a docker image.
+
+A new image always builds on an existing image eg alpine.
+```dockerfile
+FROM node
+```
+Execute any Linux commands
+```dockerfile
+RUN mkdir -p /home/app
+```
+Define ENV
+```dockerfile
+ENV MONGO_DB_USERNAME=user \
+    MONGO_DB_PASSWORD=pw
+```
 
 
 
