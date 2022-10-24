@@ -23,8 +23,6 @@ services:
       - 8083:8081
     environment:
       - PMA_HOST=mysql
-    ports:
-      - 8083:80
     container_name: phpmyadmin
 volumes:
   mysql-data:
