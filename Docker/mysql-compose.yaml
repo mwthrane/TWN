@@ -10,7 +10,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_DATABASE: team-member-databse
+      MYSQL_DATABASE: team-member-database
       MYSQL_USER: admin
       MYSQL_PASSWORD: adminpass
     volumes:
