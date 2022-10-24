@@ -19,6 +19,8 @@ services:
 
   phpmyadmin:
     image: phpmyadmin
+    ports:
+      - 8083:8081
     environment:
       - PMA_HOST=mysql
     ports:
