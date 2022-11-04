@@ -24,6 +24,12 @@ services:
     environment:
       - PMA_HOST=mysql
     container_name: phpmyadmin
+
+  java-app:
+    image: java-app:1.0
+    ports:
+      - 3000:3000
+
 volumes:
   mysql-data:
     driver: local
