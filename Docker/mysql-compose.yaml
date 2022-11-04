@@ -34,7 +34,7 @@ services:
       DB_USER: admin
       DB_PWD: adminpass
       DB_SERVER: mysql
-      DB_NAME: team-member-projects
+      DB_NAME: team-member-database
     container_name: java-app
 
 volumes:
