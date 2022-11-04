@@ -107,5 +107,14 @@ ENV MONGO_DB_USERNAME=user \
     MONGO_DB_PASSWORD=pw
 ```
 
+To rename a docker image to suit a repository
+```
+docker tag image-name new-image-new
+```
+
+To push the "new" docker image do
+```
+docker push image-name:tag
+```
 
 
