@@ -12,8 +12,8 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
       MYSQL_DATABASE: team-member-database
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: adminpass
+      MYSQL_USER: admin2
+      MYSQL_PASSWORD: adminpass2
     volumes:
     - mysql-data:/var/lib/mysql
     container_name: mysql
@@ -31,8 +31,8 @@ services:
     ports:
       - 3000:3000
     environment:
-      DB_USER: admin
-      DB_PWD: adminpass
+      DB_USER: admin2
+      DB_PWD: adminpass2
       DB_SERVER: mysql
       DB_NAME: team-member-projects
     container_name: java-app
