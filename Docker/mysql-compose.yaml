@@ -30,6 +30,12 @@ services:
     image: java-app:1.0
     ports:
       - 3000:3000
+    environment:
+      DB_USER: admin
+      DB_PWD: adminpass
+      DB_SERVER: mysql
+      DB_NAME: team-member-projects
+    container_name: java-app
 
 volumes:
   mysql-data:
