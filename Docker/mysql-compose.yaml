@@ -30,6 +30,7 @@ services:
     image: java-app:1.0
     ports:
       - 3000:3000
+    expose: [3000]
     environment:
       DB_USER: admin
       DB_PWD: adminpass
