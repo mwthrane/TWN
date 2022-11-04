@@ -33,7 +33,7 @@ services:
     environment:
       DB_USER: admin
       DB_PWD: adminpass
-      DB_SERVER: localhost
+      DB_SERVER: mysql
       DB_NAME: team-member-projects
     container_name: java-app
 
