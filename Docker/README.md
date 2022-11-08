@@ -106,6 +106,10 @@ Define ENV
 ENV MONGO_DB_USERNAME=user \
     MONGO_DB_PASSWORD=pw
 ```
+Build a docker image with Dockerfile
+```
+docker build -t image_name path
+```
 
 To rename a docker image to suit a repository
 ```
@@ -115,6 +119,33 @@ docker tag image-name new-image-new
 To push the "new" docker image do
 ```
 docker push image-name:tag
+```
+
+To login to an untrusted/insecure repo with docker
+
+ON docker client:
+
+create file
+```
+/etc/default/docker
+```
+add the line
+```
+DOCKER_OPTS="--config-file=/etc/docker/daemon.json"
+```
+add
+```
+{ "insecure-registries":["host:port"] }
+```
+to
+```
+ /etc/docker/daemon.json
+```
+Restart docker client/reboot
+
+Now connect
+```
+sudo docker login -u admin http://3.74.234.152:8084/repository/dockerRepo/
 ```
 
 
