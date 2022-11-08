@@ -114,11 +114,15 @@ docker build -t image_name path
 To rename a docker image to suit a repository
 ```
 docker tag image-name new-image-new
+#eg
+sudo docker tag java-app:1.0 3.74.234.152:8084/java-app:1.0
 ```
 
 To push the "new" docker image do
 ```
 docker push image-name:tag
+#eg
+sudo docker push 3.74.234.152:8084/java-app:1.0
 ```
 
 To login to an untrusted/insecure repo with docker
