@@ -31,7 +31,7 @@ services:
 
 
   java-app:
-    image: 3.74.234.152:8084/java-app
+    image: 3.74.234.152:8084/java-app:1.3
     ports:
       - 8082:3000
       - 8080:8080
