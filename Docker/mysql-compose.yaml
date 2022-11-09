@@ -26,6 +26,9 @@ services:
       - PMA_PORT=${PMA_PORT}
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
     container_name: phpmyadmin
+    depends_on:
+      - mysql
+
 
   java-app:
     image: 3.74.234.152:8084/java-app
@@ -39,6 +42,8 @@ services:
       - DB_SERVER=${DB_SERVER}
       - DB_NAME=${DB_NAME}
     container_name: java-app
+    depends_on:
+      - mysql
 
 volumes:
   mysql-data:
