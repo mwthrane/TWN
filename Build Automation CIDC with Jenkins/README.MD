@@ -20,4 +20,18 @@ apt install npm
 
 ```
 
+### Make Docker avail inside Jenkins container, mapped from host
+
+```
+docker run -p 8080:8080 -p 50000:50000 -d \
+-v jenkins_home:/var/jenkins_home \
+-v /var/run/docker.sock:/var/run/docker.sock jenkins/jenkins:lts
+
+docker exec -it -u0 0a9b3a806bff bash
+
+curl https://get.docker.com > dockerinstall && chmod 777 dockerinstall && ./dockerinstall
+
+sudo chmod 666 /var/run/docker.sock
+```
+
 
