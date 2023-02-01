@@ -34,7 +34,7 @@ curl https://get.docker.com > dockerinstall && chmod 777 dockerinstall && ./dock
 sudo chmod 666 /var/run/docker.sock
 ```
 
-### build and push docker image from jenkins
+### build and push docker image from jenkins to docker hub
 
 ```
 docker build -t mwthrane/demo-app:JMA-1.1 .
