@@ -34,4 +34,11 @@ curl https://get.docker.com > dockerinstall && chmod 777 dockerinstall && ./dock
 sudo chmod 666 /var/run/docker.sock
 ```
 
+### build and push docker image from jenkins
 
+```
+docker build -t mwthrane/demo-app:JMA-1.1 .
+
+echo $PASSWORD | docker login -u $USERNAME --password-stdin
+docker push mwthrane/demo-app:JMA-1.1
+```
