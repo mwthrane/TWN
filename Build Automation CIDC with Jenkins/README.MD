@@ -42,3 +42,33 @@ docker build -t mwthrane/demo-app:JMA-1.1 .
 echo $PASSWORD | docker login -u $USERNAME --password-stdin
 docker push mwthrane/demo-app:JMA-1.1
 ```
+
+### clone project to dockerize
+
+```
+git clone git@github.com:mwthrane/node-project2.git
+```
+### Create dockerfile in the root
+```
+FROM node:13-alpine
+
+RUN mkdir -p /usr/app
+COPY app/* /usr/app/
+
+WORKDIR /usr/app
+EXPOSE 3000
+
+RUN npm install
+CMD ["node", "server.js"]
+
+```
+### Build and run it
+```
+docker build -t node-project:1.0 .
+docker run node-project:1.0
+app listening on port 3000!
+
+```
+
+
+
