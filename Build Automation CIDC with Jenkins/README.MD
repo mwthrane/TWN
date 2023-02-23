@@ -70,5 +70,40 @@ app listening on port 3000!
 
 ```
 
+### Jenkinsfile for build and repo upload
+```
+pipeline {
+    agent any
+    tools {
+        nodejs "node"
+    }
+    stages {
+        
+        stage('Run tests') {
+            steps {
+               script {
 
+                    dir("app") {
+
+                        sh "npm install"
+                        sh "npm run test"
+                    } 
+               }
+            }
+        }
+        stage('Build and Push docker image') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'hub.docker', usernameVariable: 'USER', passwordVariable: 'PWD')]){
+                    sh "docker build -t mwthrane/demo-app:NODEJS-2.0 ."
+                    sh "echo ${PWD} | docker login -u ${USER} --password-stdin"
+                    sh "docker push mwthrane/demo-app:NODEJS-2.0"
+                }
+            }
+        }
+
+    }
+}
+
+```
+Not possible to do version increment as described because of https://issues.jenkins.io/browse/JENKINS-63384
 
