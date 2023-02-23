@@ -107,3 +107,11 @@ pipeline {
 ```
 Not possible to do version increment as described because of https://issues.jenkins.io/browse/JENKINS-63384
 
+### Manual deploy
+```
+docker run mwthrane/demo-app:NODEJS-2.0
+
+CONTAINER ID   IMAGE                          COMMAND                  CREATED             STATUS             PORTS                                                                                      NAMES
+814e54546729   mwthrane/demo-app:NODEJS-2.0   "docker-entrypoint.s…"   18 seconds ago      Up 17 seconds      3000/tcp    
+
+```
